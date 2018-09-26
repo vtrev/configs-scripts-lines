@@ -1,23 +1,4 @@
-#initialise my js webapps,lazy to mkdir and touch everytime
-
-touch index.js routes.js .gitignore .travis.yml package.json README.md
-
-mkdir public test views 
-
-cd views
-
-mkdir layouts
-
-touch home.handlebars
-
-cd layouts 
-
-touch main.handlebars
-
-cd ..
-cd ..
- echo "node_modules/" >> .gitignore
-echo "'use strict';
+'use strict';
 
 const bodyParser = require('body-parser');
 const express = require('express');
@@ -36,7 +17,6 @@ const {
 // Heroku pool
 let useSSL = false;
 let local = process.env.LOCAL || false;
-if (process.env.DATABASE_URL && !local) {
     useSSL = true;
 }
 // which db connection to use
@@ -62,4 +42,4 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: false
 }));
-" >> index.js
+
